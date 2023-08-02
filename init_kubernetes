@@ -69,7 +69,6 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-
 #sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 yum install -y kubelet-$version kubeadm-$version kubectl-$version
 # 10-kubeadm.conf add container
