@@ -50,9 +50,9 @@ sysctl --system
 # setting containerd
 containerd config default >/etc/containerd/config.toml
 # sed the containerd configuration
-sed -i "s#k8s.gcr.io#registry.cn-hangzhou.aliyuncs.com/google_containers#g" /etc/containerd/config.toml
-sed -i '/containerd.runtimes.runc.options/a\ \ \ \ \ \ \ \ \ \ \ \ SystemdCgroup = true' /etc/containerd/config.toml ##check /etc/containerd/config.toml 
-#sed -i "s#https://registry-1.docker.io#https://registry.cn-hangzhou.aliyuncs.com#g"  /etc/containerd/config.toml
+#sed -i "s#k8s.gcr.io#registry.cn-hangzhou.aliyuncs.com/google_containers#g" /etc/containerd/config.toml
+sed -i "s#SystemdCgroup = false#SystemdCgroup = true#g /etc/containerd/config.toml ##check /etc/containerd/config.toml 
+sed -i "s#https://registry-1.docker.io#https://registry.cn-hangzhou.aliyuncs.com#g"  /etc/containerd/config.toml
 
 systemctl daemon-reload
 systemctl enable --now containerd
